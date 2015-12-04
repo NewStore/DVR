@@ -8,6 +8,10 @@ public class Session: NSURLSession {
     public let cassetteName: String
     public let backingSession: NSURLSession
     public var recordingEnabled = true
+    /**
+     Bool flag for ignoring the baseURL when comparing the request url with the url stored in the cassette.
+     - Note: Defalt value is false, change to true if you need to ignore the base url and compare only the relative paths of the urls not the entire url.
+     */
     public var ignoreBaseURL = false
 
     private let testBundle: NSBundle
@@ -37,7 +41,7 @@ public class Session: NSURLSession {
         addTask(task)
         return task
     }
-
+    
     public override func dataTaskWithRequest(request: NSURLRequest, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
         let task = SessionDataTask(session: self, request: request, completion: completionHandler)
         addTask(task)
