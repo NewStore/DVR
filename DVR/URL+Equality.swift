@@ -57,6 +57,10 @@ extension NSURL {
      - returns: true if is equal to url, otherwise false
      */
     func isEqual(toURL url: NSURL, ignoreURLComponents: URLComponent = []) -> Bool {
+        guard !ignoreURLComponents.isEmpty else {
+            return self == url
+        }
+        
         guard let lhs = NSURLComponents(URL: self, resolvingAgainstBaseURL: true),
             rhs = NSURLComponents(URL: url, resolvingAgainstBaseURL: true) else {
                 return false
