@@ -39,7 +39,7 @@ class SessionDataTask: NSURLSessionDataTask {
         let cassette = session.cassette
 
         // Find interaction
-        if let interaction = session.cassette?.interactionForRequest(request, ignoreBaseURL: session.ignoreBaseURL) {
+        if let interaction = session.cassette?.interactionForRequest(request, ignoreURLComponents: session.ignoreURLComponents) {
 			self.interaction = interaction
             // Forward completion
             if let completion = completion {
