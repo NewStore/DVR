@@ -40,7 +40,7 @@ class SessionDataTask: NSURLSessionDataTask {
 
         // Find interaction
         if let interaction = session.cassette?.interactionForRequest(request, ignoreURLComponents: session.ignoreURLComponents) {
-			self.interaction = interaction
+            self.interaction = interaction
             // Forward completion
             if let completion = completion {
                 dispatch_async(queue) {
