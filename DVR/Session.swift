@@ -1,13 +1,13 @@
 import Foundation
 
-open class Session: URLSession {
+public class Session: URLSession {
 
     // MARK: - Properties
 
-    open var outputDirectory: String
-    open let cassetteName: String
-    open let backingSession: URLSession
-    open var recordingEnabled = true
+    public var outputDirectory: String
+    public let cassetteName: String
+    public let backingSession: URLSession
+    public var recordingEnabled = true
     /**
      Bool flag for ignoring the baseURL when comparing the request url with the url stored in the cassette.
      - Note: Defalt value is false, change to true if you need to ignore the base url and compare only the relative paths of the urls not the entire url.
@@ -22,7 +22,7 @@ open class Session: URLSession {
     private var completedInteractions = [Interaction]()
     private var completionBlock: (() -> Void)?
 
-    override open var delegate: URLSessionDelegate? {
+    override public var delegate: URLSessionDelegate? {
         return backingSession.delegate
     }
 
@@ -39,41 +39,41 @@ open class Session: URLSession {
 
     // MARK: - URLSession
 
-    open override func dataTask(with request: URLRequest) -> URLSessionDataTask {
+    public override func dataTask(with request: URLRequest) -> URLSessionDataTask {
         return addDataTask(request)
     }
 
-	open override func dataTask(with request: URLRequest, completionHandler: @escaping ((Data?, Foundation.URLResponse?, Error?) -> Void)) -> URLSessionDataTask {
+	public override func dataTask(with request: URLRequest, completionHandler: @escaping ((Data?, Foundation.URLResponse?, Error?) -> Void)) -> URLSessionDataTask {
         return addDataTask(request, completionHandler: completionHandler)
     }
 
-    open override func downloadTask(with request: URLRequest) -> URLSessionDownloadTask {
+    public override func downloadTask(with request: URLRequest) -> URLSessionDownloadTask {
         return addDownloadTask(request)
     }
 
-	open override func downloadTask(with request: URLRequest, completionHandler: @escaping (URL?, Foundation.URLResponse?, Error?) -> Void) -> URLSessionDownloadTask {
+	public override func downloadTask(with request: URLRequest, completionHandler: @escaping (URL?, Foundation.URLResponse?, Error?) -> Void) -> URLSessionDownloadTask {
         return addDownloadTask(request, completionHandler: completionHandler)
     }
 
-    open override func uploadTask(with request: URLRequest, from bodyData: Data) -> URLSessionUploadTask {
+    public override func uploadTask(with request: URLRequest, from bodyData: Data) -> URLSessionUploadTask {
         return addUploadTask(request, fromData: bodyData)
     }
 
-	open override  func uploadTask(with request: URLRequest, from bodyData: Data?, completionHandler: @escaping (Data?, Foundation.URLResponse?, Error?) -> Void) -> URLSessionUploadTask {
+	public override  func uploadTask(with request: URLRequest, from bodyData: Data?, completionHandler: @escaping (Data?, Foundation.URLResponse?, Error?) -> Void) -> URLSessionUploadTask {
         return addUploadTask(request, fromData: bodyData, completionHandler: completionHandler)
     }
 
-    open override func uploadTask(with request: URLRequest, fromFile fileURL: URL) -> URLSessionUploadTask {
+    public override func uploadTask(with request: URLRequest, fromFile fileURL: URL) -> URLSessionUploadTask {
         let data = try! Data(contentsOf: fileURL)
         return addUploadTask(request, fromData: data)
     }
 
-	open override func uploadTask(with request: URLRequest, fromFile fileURL: URL, completionHandler: @escaping (Data?, Foundation.URLResponse?, Error?) -> Void) -> URLSessionUploadTask {
+	public override func uploadTask(with request: URLRequest, fromFile fileURL: URL, completionHandler: @escaping (Data?, Foundation.URLResponse?, Error?) -> Void) -> URLSessionUploadTask {
         let data = try! Data(contentsOf: fileURL)
         return addUploadTask(request, fromData: data, completionHandler: completionHandler)
     }
 
-    open override func invalidateAndCancel() {
+    public override func invalidateAndCancel() {
         recording = false
         outstandingTasks.removeAll()
         backingSession.invalidateAndCancel()
@@ -83,7 +83,7 @@ open class Session: URLSession {
     // MARK: - Recording
 
     /// You don’t need to call this method if you're only recoding one request.
-    open func beginRecording() {
+    public func beginRecording() {
         if recording {
             return
         }
@@ -98,7 +98,7 @@ open class Session: URLSession {
     /// This only needs to be called if you call `beginRecording`. `completion` will be called on the main queue after
     /// the completion block of the last task is called. `completion` is useful for fulfilling an expectation you setup
     /// before calling `beginRecording`.
-    open func endRecording(_ completion: (() -> Void)? = nil) {
+    public func endRecording(_ completion: (() -> Void)? = nil) {
         if !recording {
             return
         }
