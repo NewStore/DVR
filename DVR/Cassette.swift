@@ -50,7 +50,7 @@ extension Cassette {
         self.name = name
 
         if let array = dictionary["interactions"] as? [[String: Any]] {
-            interactions = array.flatMap { Interaction(dictionary: $0) }
+            interactions = array.compactMap { Interaction(dictionary: $0) }
         } else {
             interactions = []
         }

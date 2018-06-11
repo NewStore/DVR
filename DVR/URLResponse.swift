@@ -16,11 +16,11 @@ class URLResponse: Foundation.URLResponse {
 
 
 extension Foundation.URLResponse {
-    var dictionary: [String: Any] {
+    @objc var dictionary: [String: Any] {
         if let url = url?.absoluteString {
             return ["url": url as Any]
         }
-
+        
         return [:]
     }
 }
