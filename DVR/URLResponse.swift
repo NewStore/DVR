@@ -16,7 +16,7 @@ class URLResponse: Foundation.URLResponse {
 
 
 extension Foundation.URLResponse {
-    @objc var dictionary: [String: Any] {
+    var dictionary: [String: Any] {
         if let url = url?.absoluteString {
             return ["url": url as Any]
         }
