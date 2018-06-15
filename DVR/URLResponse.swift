@@ -20,7 +20,7 @@ extension Foundation.URLResponse {
         if let url = url?.absoluteString {
             return ["url": url as Any]
         }
-
+        
         return [:]
     }
 }
