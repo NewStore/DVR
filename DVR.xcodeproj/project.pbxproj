@@ -427,7 +427,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Venmo;
 				TargetAttributes = {
 					2104F52D1DC658580039CA14 = {
@@ -440,11 +440,11 @@
 					};
 					3647AF9A1B335D5500EF10D4 = {
 						CreatedOnToolsVersion = 7.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 					};
 					3647AFA41B335D5500EF10D4 = {
 						CreatedOnToolsVersion = 7.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 					};
 					3690A07A1B33AA3B00731222 = {
 						CreatedOnToolsVersion = 7.0;
@@ -461,6 +461,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 3647AF911B335D5500EF10D4;
@@ -727,6 +728,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -791,6 +793,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -859,7 +862,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.venmo.DVR;
 				PRODUCT_NAME = DVR;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -878,7 +881,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.venmo.DVR;
 				PRODUCT_NAME = DVR;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -890,7 +893,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.venmo.DVR.iostests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -902,7 +905,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.venmo.DVR.iostests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
