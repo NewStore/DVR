@@ -427,7 +427,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = Venmo;
 				TargetAttributes = {
 					2104F52D1DC658580039CA14 = {
@@ -859,7 +859,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/DVR/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.3.1n4;
+				MARKETING_VERSION = 1.3.1n5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.venmo.DVR;
 				PRODUCT_NAME = DVR;
 				SKIP_INSTALL = YES;
@@ -879,7 +879,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/DVR/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.3.1n4;
+				MARKETING_VERSION = 1.3.1n5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.venmo.DVR;
 				PRODUCT_NAME = DVR;
 				SKIP_INSTALL = YES;
